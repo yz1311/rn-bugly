@@ -24,6 +24,18 @@ android {
     lintOptions {
         abortOnError false
     }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs'];
+        }
+    }
 }
 
 repositories {
@@ -32,5 +44,7 @@ repositories {
 
 dependencies {
     compile 'com.facebook.react:react-native:+'
+    compile fileTree(dir: "libs", include: ["*.jar"])
+    compile(name: 'bugly_crashreport_upgrade-1.4.0', ext: 'aar')
 }
   

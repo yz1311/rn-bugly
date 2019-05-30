@@ -30,9 +30,22 @@
   	project(':rn-bugly').projectDir = new File(rootProject.projectDir, 	'../node_modules/rn-bugly/android')
   	```
 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
+
   	```
       compile project(':rn-bugly')
   	```
+
+		
+	insert into `android` section:
+	
+	```
+	repositories {
+			flatDir {
+					dirs project(':rn-bugly').file('libs')
+			}
+	}
+	```	
+
 
 ## Usage
 ```javascript
