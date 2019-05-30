@@ -156,7 +156,7 @@ public class RNBuglyModule extends ReactContextBaseJavaModule {
       writableMap.putInt("upgradeType",info.upgradeType);
       writableMap.putInt("versionCode",info.versionCode);
       writableMap.putDouble("publishTime",info.publishTime);
-      promise.resolve(info);
+      promise.resolve(writableMap);
     }
     promise.resolve(null);
   }
