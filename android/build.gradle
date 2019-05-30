@@ -24,18 +24,6 @@ android {
     lintOptions {
         abortOnError false
     }
-
-    repositories {
-        flatDir {
-            dirs 'libs'
-        }
-    }
-
-    sourceSets {
-        main {
-            jniLibs.srcDirs = ['libs'];
-        }
-    }
 }
 
 repositories {
