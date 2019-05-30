@@ -1,5 +1,5 @@
 
-package com.reactlibrary;
+package com.reactlibrary.bugly;
 
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.Promise;
