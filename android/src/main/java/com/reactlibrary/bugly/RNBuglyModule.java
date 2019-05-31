@@ -1,5 +1,5 @@
 
-package com.reactlibrary.bugly;
+package com.reactlibrary;
 
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.Promise;
@@ -34,13 +34,23 @@ public class RNBuglyModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void setUserIdentifier(String userID) {
+  public void setUserId(String userID) {
     CrashReport.setUserId(userID);
   }
 
   @ReactMethod
-  public void updateAppVersion(String version) {
+  public void setAppChannel(String appChannel) {
+    CrashReport.setAppChannel(getReactApplicationContext(), appChannel);
+  }
+
+  @ReactMethod
+  public void setAppVersion(String version) {
     CrashReport.setAppVersion(getReactApplicationContext(), version);
+  }
+
+  @ReactMethod
+  public void setAppPackage(String appPackage) {
+    CrashReport.setAppPackage(getReactApplicationContext(), appPackage);
   }
 
   @ReactMethod
