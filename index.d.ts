@@ -1,11 +1,11 @@
 declare module 'rn-bugly' {
-    export type setUserIdentifier = (userId: string) => void;
-    export type updateAppVersion = (version: string) => void;
-    export type setTag = (tagId: number) => void;
+    export function setUserIdentifier (userId: string): void;
+    export function updateAppVersion (version: string): void;
+    export function setTag (tagId: number): void;
     /**
      * 获取本地已有升级策略（非实时，可用于界面红点展示）
      */
-    export type getUpgradeInfo = () => Promise<{
+    export function getUpgradeInfo (): Promise<{
         apkMd5: string,
         apkUrl: string,
         id: string,
@@ -26,9 +26,9 @@ declare module 'rn-bugly' {
     * @param isManual  用户手动点击检查，非用户点击操作请传false
     * @param isSilence 是否显示弹窗等交互，[true:没有弹窗和toast] [false:有弹窗或toast]
     */
-    export type checkUpgrade = (params:{isManual?: boolean,isSilence?: boolean}) => void;
-    export type log = (level:logLevel,tag:string,log:string) => void;
-    export type postException = (parmas:{category:number,errorType:string,errorMsg:string,stack?:string,extraInfo?:{[key:string]:string}}) => void;
+    export function checkUpgrade (params:{isManual?: boolean,isSilence?: boolean}): void;
+    export function log (level:logLevel,tag:string,log:string): void;
+    export function postException (parmas:{category:number,errorType:string,errorMsg:string,stack?:string,extraInfo?:{[key:string]:string}}): void;
     enum logLevel {
         v = 'v',
         d = 'd',
