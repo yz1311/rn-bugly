@@ -1,7 +1,7 @@
 
 # rn-bugly
 
-## Getting started
+## 安装
 
 `$ npm install https://github.com/yz1311/rn-bugly --save`
 
@@ -16,7 +16,7 @@
 
 1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
 2. Go to `node_modules` ➜ `rn-bugly` and add `RNBugly.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libRNBugly.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
+3. In XCode, in the project navigator, select your project. Add `libRNBugly.a` and `Bugly.framework` to your project's `Build Phases` ➜ `Link Binary With Libraries`
 4. Run your project (`Cmd+R`)<
 
 #### Android
@@ -35,12 +35,54 @@
       compile project(':rn-bugly')
   	```
 
+### 配置
+#### iOS
+`AppDelegate.m`
+```
+#import "RNBugly.h"
+-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+  ...
+  //初始化bugly，会自动读取info.plist中的参数
+  [RNBugly startWithAppId];
+	return YES;
+}
+```
+`info.plist`文件读取SDK初始化参数，可配置的参数如下：
+```
+- Appid
+    - Key: BuglyAppIDString
+    - Value: 字符串类型
+- 渠道标识
+    - Key: BuglyAppChannelString
+    - Value: 字符串类型
+- 版本信息
+    - Key: BuglyAppVersionString
+    - Value: 字符串类型
+- 开启Debug信息显示
+    - Key: BuglyDebugEnable
+    - Value: BOOL类型
+```
 
-## Usage
+#### Android
+`MainApplication.java`
+```
+import com.tencent.bugly.Bugly;
+
+@Override
+public void onCreate() {
+  super.onCreate();
+  //初始化bugly
+  Bugly.init(getApplicationContext(),"你的Key",false);
+  ...
+}
+```
+
+## 使用
 ```javascript
 import RNBugly from 'rn-bugly';
 
-// TODO: What to do with the module?
-RNBugly;
 ```
+
+具体方法请查看: [index.d.ts](./index.d.ts)
   

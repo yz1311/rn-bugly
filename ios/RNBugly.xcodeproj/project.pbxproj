@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CCEE68522A213F30015C160 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CCEE68422A213F30015C160 /* SystemConfiguration.framework */; };
+		0CCEE68722A214000015C160 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CCEE68622A214000015C160 /* Security.framework */; };
+		0CCEE68922A214070015C160 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CCEE68822A214070015C160 /* libz.tbd */; };
+		0CCEE68B22A214100015C160 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CCEE68A22A214100015C160 /* libc++.tbd */; };
 		0CFCD2EE229F78F90067A0F4 /* Bugly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CFCD2ED229F78F90067A0F4 /* Bugly.framework */; };
 		B3E7B58A1CC2AC0600A0062D /* RNBugly.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNBugly.m */; };
 /* End PBXBuildFile section */
@@ -24,6 +28,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0CCEE68422A213F30015C160 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		0CCEE68622A214000015C160 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		0CCEE68822A214070015C160 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		0CCEE68A22A214100015C160 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		0CFCD2ED229F78F90067A0F4 /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bugly.framework; sourceTree = "<group>"; };
 		134814201AA4EA6300B7C361 /* libRNBugly.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNBugly.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E7B5881CC2AC0600A0062D /* RNBugly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNBugly.h; sourceTree = "<group>"; };
@@ -35,6 +43,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CCEE68B22A214100015C160 /* libc++.tbd in Frameworks */,
+				0CCEE68922A214070015C160 /* libz.tbd in Frameworks */,
+				0CCEE68722A214000015C160 /* Security.framework in Frameworks */,
+				0CCEE68522A213F30015C160 /* SystemConfiguration.framework in Frameworks */,
 				0CFCD2EE229F78F90067A0F4 /* Bugly.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,6 +57,10 @@
 		0CFCD2EC229F78F90067A0F4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0CCEE68A22A214100015C160 /* libc++.tbd */,
+				0CCEE68822A214070015C160 /* libz.tbd */,
+				0CCEE68622A214000015C160 /* Security.framework */,
+				0CCEE68422A213F30015C160 /* SystemConfiguration.framework */,
 				0CFCD2ED229F78F90067A0F4 /* Bugly.framework */,
 			);
 			name = Frameworks;
