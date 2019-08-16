@@ -1,5 +1,6 @@
 
 # rn-bugly
+bugly for react-native,支持统计，android支持升级
 
 ## 安装
 
