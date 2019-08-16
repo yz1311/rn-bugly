@@ -4,7 +4,7 @@ bugly for react-native,支持统计，android支持升级
 
 ## 安装
 
-`$ npm install https://github.com/yz1311/rn-bugly --save`
+`$ npm install rn-bugly --save`
 
 ### Mostly automatic installation
 
