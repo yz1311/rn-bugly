@@ -16,9 +16,11 @@ react-native <0.60
 
 `$ react-native link rn-bugly`
 
-react-native >=0.60,会自动link，但是需要在`ios`文件夹下执行
+react-native >=0.60
 
 `$ npm install rn-bugly --save`
+
+新版RN会自动link，但是需要在`ios`文件夹下执行
 
 `$ pod install`
 
