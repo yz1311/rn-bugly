@@ -1,7 +1,7 @@
 
 {
   "name": "rn-bugly",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "bugly for react-native,支持统计，android支持升级",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,8 @@
     "url": "git+https://github.com/yz1311/rn-bugly.git"
   },
   "keywords": [
-    "react-native"
+    "react-native",
+    "bugly"
   ],
   "author": "yz131",
   "license": "MIT",
@@ -21,8 +22,6 @@
   },
   "homepage": "https://github.com/yz1311/rn-bugly#readme",
   "peerDependencies": {
-    "react-native": "^0.41.2",
-    "react-native-windows": "0.41.0-rc.1"
-
+    
   }
 }

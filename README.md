@@ -1,16 +1,29 @@
 
 # rn-bugly
+
+[![npm version](http://img.shields.io/npm/v/rn-bugly.svg?style=flat-square)](https://npmjs.org/package/rn-bugly "View this project on npm")
+[![npm version](http://img.shields.io/npm/dm/rn-bugly.svg?style=flat-square)](https://npmjs.org/package/rn-bugly "View this project on npm")
+
 bugly for react-native,支持统计，android支持升级
 
 ## 安装
 
-`$ npm install rn-bugly --save`
 
-### Mostly automatic installation
+
+react-native <0.60
+
+`$ npm install rn-bugly@0.1.0 --save`
 
 `$ react-native link rn-bugly`
 
-### Manual installation
+react-native >=0.60,会自动link，但是需要在`ios`文件夹下执行
+
+`$ npm install rn-bugly --save`
+
+`$ pod install`
+
+
+### Manual installation(针对RN 0.60以下版本)
 
 
 #### iOS
