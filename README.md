@@ -8,45 +8,23 @@ bugly for react-native,支持统计，android支持应用全量升级
 
 ## 安装
 
-`$ npm install rn-bugly --save`
+> `$ npm install rn-bugly --save`
 
-react-native <0.60
+* react-native <0.60
 
-`$ react-native link rn-bugly`
+> `$ react-native link rn-bugly`
 
-react-native >=0.60
-```
-新版RN会自动link，但是需要在`ios`文件夹下执行
+* react-native >=0.60
 
+新版RN会自动link,不需要执行link命令
+
+---
+不管是哪个版本的react-native，ios端都需要在`ios`文件夹下执行
+```shell
+$ cd ios
 $ pod install
 ```
 
-
-### Manual installation(针对RN 0.60以下版本手动安装)
-
-
-#### iOS
-
-1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `rn-bugly` and add `RNBugly.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libRNBugly.a` and `Bugly.framework` to your project's `Build Phases` ➜ `Link Binary With Libraries`
-4. Run your project (`Cmd+R`)<
-
-#### Android
-
-1. Open up `android/app/src/main/java/[...]/MainApplication.java`
-  - Add `import com.reactlibrary.bugly.RNBuglyPackage;` to the imports at the top of the file
-  - Add `new RNBuglyPackage()` to the list returned by the `getPackages()` method
-2. Append the following lines to `android/settings.gradle`:
-  	```
-  	include ':rn-bugly'
-  	project(':rn-bugly').projectDir = new File(rootProject.projectDir, 	'../node_modules/rn-bugly/android')
-  	```
-3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
-
-  	```
-      implementation project(':rn-bugly')
-  	```
 
 ### 配置
 #### iOS
@@ -161,5 +139,5 @@ https://blog.csdn.net/weixin_34114823/article/details/88037177
   
 ## 截图
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlgy1gdpp54zj0nj30u01uoqed.jpg)
-![](https://tva1.sinaimg.cn/large/007S8ZIlgy1gdpp5gjhhvj30u01uotej.jpg)
+<img src='https://tva1.sinaimg.cn/large/007S8ZIlgy1gdpp54zj0nj30u01uoqed.jpg' />
+<img src='https://tva1.sinaimg.cn/large/007S8ZIlgy1gdpp5gjhhvj30u01uotej.jpg' />
