@@ -56,10 +56,23 @@ export default {
         return RNBugly.putUserData(userKey,userValue);
     },
     /**
+     * init方法调用会初始化成功，但是实际测试虽然初始化成功
+     * 但是autoCheckAppUpgrade无效
+     * 该方法有问题，屏蔽掉
+     */
+    // init: function (appId) {
+    //     if(Platform.OS === 'android') {
+    //         return RNBugly.init(appId);
+    //     }
+    // },
+    /**
      * Android Only,获取本地已有升级策略（非实时，可用于界面红点展示）
      */
     getUpgradeInfo: function () {
-        return RNBugly.getUpgradeInfo();
+        if(Platform.OS === 'android') {
+            return RNBugly.getUpgradeInfo();
+        }
+        return Promise.resolve(null);
     },
     /**
      * Android Only,检查更新
@@ -67,7 +80,9 @@ export default {
     * @param isSilence 是否显示弹窗等交互，[true:没有弹窗和toast] [false:有弹窗或toast]
     */
     checkUpgrade: function (params) {
-        RNBugly.checkUpgrade(params);
+        if(Platform.OS === 'android') {
+            RNBugly.checkUpgrade(params);
+        }
     },
     /**
      * Android Only,打印日志
@@ -77,10 +92,14 @@ export default {
      * @param {*} log 
      */
     log: function (level, tag, log) {
-        RNBugly.log(level,tag,log);
+        if(Platform.OS === 'android') {
+            RNBugly.log(level,tag,log);
+        }
     },
     //Android Only,主动上传日志
     postException: function (params) {
-        RNBugly.postException(params);
+        if(Platform.OS === 'android') {
+            RNBugly.postException(params);
+        }
     }
 };

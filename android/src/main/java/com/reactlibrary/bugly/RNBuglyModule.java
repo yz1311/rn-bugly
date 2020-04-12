@@ -1,6 +1,10 @@
 
 package com.reactlibrary.bugly;
 
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.os.Environment;
+
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
@@ -11,6 +15,7 @@ import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.ReadableMapKeySetIterator;
 import com.facebook.react.bridge.ReadableType;
 import com.facebook.react.bridge.WritableMap;
+import com.tencent.bugly.Bugly;
 import com.tencent.bugly.beta.Beta;
 import com.tencent.bugly.beta.UpgradeInfo;
 import com.tencent.bugly.crashreport.BuglyLog;
@@ -31,6 +36,115 @@ public class RNBuglyModule extends ReactContextBaseJavaModule {
   @Override
   public String getName() {
     return "RNBugly";
+  }
+
+  //初始化(自动检查更新)
+  public static void init(Context context,String appId,boolean isDebug) {
+    Bugly.init(context,appId,isDebug);
+  }
+
+  //初始化(不自动检查更新)
+  public static void initWithoutAutoCheckUpgrade(Context context,String appId,boolean isDebug) {
+    Beta.autoCheckUpgrade = false;
+    Bugly.init(context,appId,isDebug);
+  }
+
+  private int getResourceId(String sourceName,String typeName) {
+    Context ctx = getCurrentActivity().getApplicationContext();
+    int resId = getCurrentActivity().getResources().getIdentifier(sourceName, typeName, ctx.getPackageName());
+    //如果没找到,将会返回0
+    return resId;
+  }
+
+  @ReactMethod
+  public void init(ReadableMap map, Promise promise) {
+    int upgradeCheckPeriod = 0;
+    if(map.hasKey("upgradeCheckPeriod")) {
+      upgradeCheckPeriod = map.getInt("upgradeCheckPeriod");
+    }
+    Beta.upgradeCheckPeriod = upgradeCheckPeriod;
+
+    boolean showInterruptedStrategy = true;
+    if(map.hasKey("showInterruptedStrategy")) {
+      showInterruptedStrategy = map.getBoolean("showInterruptedStrategy");
+    }
+    Beta.showInterruptedStrategy = showInterruptedStrategy;
+
+    boolean enableNotification = true;
+    if(map.hasKey("enableNotification")) {
+      enableNotification = map.getBoolean("enableNotification");
+    }
+    Beta.enableNotification = enableNotification;
+
+    boolean autoDownloadOnWifi = false;
+    if(map.hasKey("autoDownloadOnWifi")) {
+      autoDownloadOnWifi = map.getBoolean("autoDownloadOnWifi");
+    }
+    Beta.autoDownloadOnWifi = autoDownloadOnWifi;
+
+    boolean canShowApkInfo = true;
+    if(map.hasKey("canShowApkInfo")) {
+      canShowApkInfo = map.getBoolean("canShowApkInfo");
+    }
+    Beta.canShowApkInfo = canShowApkInfo;
+
+    boolean autoCheckAppUpgrade = true;
+    if(map.hasKey("autoCheckAppUpgrade")) {
+      autoCheckAppUpgrade = map.getBoolean("autoCheckAppUpgrade");
+    }
+    Beta.autoCheckAppUpgrade = autoCheckAppUpgrade;
+
+    int largeIconId = 0;
+    if(map.hasKey("largeIconName")) {
+      largeIconId = getResourceId(map.getString("largeIconName"),"drawable");
+    }
+    int smallIconId = 0;
+    if(map.hasKey("smallIconName")) {
+      smallIconId = getResourceId(map.getString("smallIconName"),"drawable");
+    }
+    int defaultBannerId = 0;
+    if(map.hasKey("defaultBannerName")) {
+      defaultBannerId = getResourceId(map.getString("defaultBannerName"),"drawable");
+    }
+    int upgradeDialogLayoutId = 0;
+    if(map.hasKey("upgradeDialogLayoutName")) {
+      upgradeDialogLayoutId = getResourceId(map.getString("upgradeDialogLayoutName"),"layout");
+    }
+    int tipsDialogLayoutId = 0;
+    if(map.hasKey("tipsDialogLayoutName")) {
+      tipsDialogLayoutId = getResourceId(map.getString("tipsDialogLayoutName"),"layout");
+    }
+    //由于是js端进行初始化，不必延时，将默认的3s改为0
+    Beta.initDelay = 0;
+    if(largeIconId>0) {
+      Beta.largeIconId = largeIconId;
+    }
+    if(smallIconId>0) {
+      Beta.smallIconId = smallIconId;
+    }
+    if(defaultBannerId>0) {
+      Beta.defaultBannerId = defaultBannerId;
+    }
+    if(upgradeDialogLayoutId>0) {
+      Beta.upgradeDialogLayoutId = upgradeDialogLayoutId;
+    }
+    if(tipsDialogLayoutId>0) {
+      Beta.tipsDialogLayoutId = tipsDialogLayoutId;
+    }
+    String appId = "";
+    if(map.hasKey("appId")) {
+      appId = map.getString("appId");
+    }
+    if(appId==null || appId.equals("")) {
+      promise.reject("0","appId不能为空");
+      return;
+    }
+    try {
+      Bugly.init(getReactApplicationContext(),appId,false);
+      promise.resolve(true);
+    } catch (Exception e) {
+      promise.reject("-1",e.getMessage());
+    }
   }
 
   @ReactMethod

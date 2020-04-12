@@ -1,0 +1,34 @@
+# 0.3.0 (2020-04-11)
+
+
+## 修复
+
+* 将android端的方法判断，防止ios端调用报错
+* 解决./gradlew assemleRelease编译报错
+
+
+## 新增
+
+* 将初始化方法拆分成两种(`依旧可以用原来的方法进行初始化，下面两个方法只是对Bugly.init的简单封装`)，可以选择进入app时不自动更新，完全由js端代码控制检查
+    `原来:`
+    ```
+    import com.tencent.bugly.Bugly;
+
+    Bugly.init(getApplicationContext(),"注册时申请的APPID",false);
+    ```
+
+
+    `现在:`
+    ```
+    import com.reactlibrary.bugly.RNBuglyModule;
+
+    ** 下面的方法根据情况二选一 **
+
+    //初始化并且自动检查更新
+    RNBuglyModule.init(getApplicationContext(),"注册时申请的APPID",false);
+
+    //仅仅初始化
+    RNBuglyModule.initWithoutAutoCheckUpgrade(getApplicationContext(),"注册时申请的APPID",false);
+    ```
+* 新增example及demo apk，更新文档
+* 补全putUserData方法，ios端的实现

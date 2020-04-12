@@ -34,5 +34,10 @@ RCT_EXPORT_METHOD(setTag:(NSUInteger)tag)
     [Bugly setTag:tag];
 }
 
+RCT_EXPORT_METHOD(putUserData:(NSString *)userKey:(NSString *)userValue)
+{
+    [Bugly setUserValue:userValue forKey:userKey];
+}
+
 @end
   
