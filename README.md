@@ -136,6 +136,12 @@ https://blog.csdn.net/weixin_34114823/article/details/88037177
 #### 3.为什么我点击更新按钮后，对话框关闭，啥反应都没有?
 
 等一会会出现安装提示,bugly对的更新方式是直接在通知栏显示下载进度，下载完成覆盖安装，如果状态栏没有提示，那就是没有通知权限(oppo/vivo系统是默认不开启该权限的)
+
+
+
+#### 4.其他问题可在官方项目中查找答案
+
+https://github.com/BuglyDevTeam/Bugly-Android-Demo
   
 ## 截图
 
