@@ -139,5 +139,5 @@ https://blog.csdn.net/weixin_34114823/article/details/88037177
   
 ## 截图
 
-<img src='https://tva1.sinaimg.cn/large/007S8ZIlgy1gdpp54zj0nj30u01uoqed.jpg' />
-<img src='https://tva1.sinaimg.cn/large/007S8ZIlgy1gdpp5gjhhvj30u01uotej.jpg' />
+<img style="width:300px;object-fit: contain;margin-right: 20px;"  src='https://tva1.sinaimg.cn/large/007S8ZIlgy1gdpp54zj0nj30u01uoqed.jpg' />
+<img style="width:300px;object-fit: contain" src='https://tva1.sinaimg.cn/large/007S8ZIlgy1gdpp5gjhhvj30u01uotej.jpg' />

@@ -1,3 +1,8 @@
+# 0.3.1 (2021-03-17)
+* 由于jcenter仓库的问题，暂时固定`com.tencent.bugly:nativecrashreport`版本为`3.8.0`
+
+jcenter仓库如果无法访问，请使用[aliyun](https://maven.aliyun.com/mvn/guide) 替换
+
 # 0.3.0 (2020-04-11)
 
 
