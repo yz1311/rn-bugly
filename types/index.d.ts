@@ -2,7 +2,7 @@ declare module 'rn-bugly' {
     /**
      * 设置当前的用户id
      * 精确定位到某个用户的异常
-     * @param userId 
+     * @param userId
      */
     export function setUserId (userId: string): void;
 
@@ -13,15 +13,15 @@ declare module 'rn-bugly' {
     export function setAppVersion (version: string): void;
 
     /**
-     * 设置渠道名称
-     * @param appChannel 
+     * Android Only,设置渠道名称
+     * @param appChannel
      */
     export function setAppChannel (appChannel: string): void;
 
     /**
      * Android Only,设置自定义包名
      * 默认读取AndroidManifest.xml中的Package信息
-     * @param appPackage 
+     * @param appPackage
      */
     export function setAppPackage (appPackage: string): void;
 
@@ -29,19 +29,47 @@ declare module 'rn-bugly' {
      * 自定义标签
      * 用于标明App的某个“场景”。在发生Crash时会显示该Crash所在的“场景”，
      * 以最后设置的标签为准，标签id需大于0。
-     * @param tagId 
+     * @param tagId
      */
     export function setTag (tagId: number): void;
+
+    /**
+     * Android Only,开启CrashReport
+     */
+    export function startCrashReport (): void;
+
+    /**
+     * 关闭CrashReport
+     */
+    export function closeCrashReport (): void;
+
+    /**
+     * 获取当前设置标签
+     * @return 当前标签ID
+     */
+    export function getCurrentTag (): Promise<number>;
+
+    /**
+     *  获取关键数据
+     *  @return 关键数据
+     */
+    export function getUserData (): Promise<Record<string, string>>;
+
+    /**
+     *  获取SDK的版本
+     *  @return sdk的版本
+     */
+    export function getBuglyVersion (): Promise<string>;
 
     /**
      * 自定义Map参数可以保存发生Crash时的一些自定义的环境信息。在发生Crash时会随着异常信息一起上报并在页面展示。
      * 最多可以有9对自定义的key-value（超过则添加失败）；
      * key限长50字节，value限长200字节，过长截断；
      * key必须匹配正则：[a-zA-Z[0-9]]+。
-     * @param params 
+     * @param params
      */
     export function putUserData (params:{userKey: string,userValue: string}): boolean;
-    
+
     /**
      * 获取本地已有升级策略（非实时，可用于界面红点展示）
      */
@@ -111,14 +139,23 @@ declare module 'rn-bugly' {
     /**
      * Android Only,打印日志
      * 用户传入TAG和日志内容。该日志将在Logcat输出，并在发生异常时上报。
-     * @param {*} level 
-     * @param {*} tag 
-     * @param {*} log 
+     * @param {*} level
+     * @param {*} tag
+     * @param {*} log
      */
     export function log (level:logLevel,tag:string,log:string): void;
 
-    export function postException (parmas:{category:number,errorType:string,errorMsg:string,stack?:string,extraInfo?:{[key:string]:string}}): void;
-    
+    /**
+     * 上报自定义异常
+     * @param params
+     * @param category 类型 ios:(Cocoa=3,CSharp=4,JS=5,Lua=6)  android:未知，可以不传
+     * @param errorType 自定义名称，可以不传
+     * @param errorMsg 名称
+     * @param stack 堆栈
+     * @param extraInfo 附加数据
+     */
+    export function postException (params:{category?:number,errorType?:string,errorMsg:string,stack?:string,extraInfo?:{[key:string]:string}}): void;
+
     enum logLevel {
         v = 'v',
         d = 'd',
@@ -126,14 +163,14 @@ declare module 'rn-bugly' {
         w = 'w',
         e = 'e',
     }
-    
+
     enum publishType {
         //测试
         test = 0,
         //正式
         production = 1
     }
-    
+
     /**
      * 升级策略
      */

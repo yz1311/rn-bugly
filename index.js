@@ -7,7 +7,7 @@ export default {
     /**
      * 设置当前的用户id
      * 精确定位到某个用户的异常
-     * @param userId 
+     * @param userId
      */
     setUserId: function (userId) {
         if(Platform.OS === 'android') {
@@ -27,14 +27,14 @@ export default {
         if(Platform.OS === 'android') {
             RNBugly.setAppChannel(appChannel);
         } else {
-            
+
         }
     },
     setAppPackage: function (appPackage) {
         if(Platform.OS === 'android') {
             RNBugly.setAppPackage(appPackage);
         } else {
-            
+
         }
     },
     setTag: function (tagId) {
@@ -44,13 +44,32 @@ export default {
             RNBugly.setTag(tagId);
         }
     },
+    startCrashReport: function () {
+        if(Platform.OS === 'android') {
+            RNBugly.startCrashReport();
+        } else {
+
+        }
+    },
+    closeCrashReport: function () {
+        RNBugly.closeCrashReport();
+    },
+    getCurrentTag: function () {
+        return RNBugly.getCurrentTag();
+    },
+    getUserData: function () {
+        return RNBugly.getUserData();
+    },
+    getBuglyVersion: function () {
+        return RNBugly.getBuglyVersion();
+    },
     /**
      * 自定义Map参数可以保存发生Crash时的一些自定义的环境信息。在发生Crash时会随着异常信息一起上报并在页面展示。
      * 最多可以有9对自定义的key-value（超过则添加失败）；
      * key限长50字节，value限长200字节，过长截断；
      * key必须匹配正则：[a-zA-Z[0-9]]+。
-     * @param {*} userKey 
-     * @param {*} userValue 
+     * @param {*} userKey
+     * @param {*} userValue
      */
     putUserData: function (userKey,userValue) {
         return RNBugly.putUserData(userKey,userValue);
@@ -87,19 +106,27 @@ export default {
     /**
      * Android Only,打印日志
      * 用户传入TAG和日志内容。该日志将在Logcat输出，并在发生异常时上报。
-     * @param {*} level 
-     * @param {*} tag 
-     * @param {*} log 
+     * @param {*} level
+     * @param {*} tag
+     * @param {*} log
      */
     log: function (level, tag, log) {
         if(Platform.OS === 'android') {
             RNBugly.log(level,tag,log);
         }
     },
-    //Android Only,主动上传日志
+    //主动上传日志
     postException: function (params) {
-        if(Platform.OS === 'android') {
-            RNBugly.postException(params);
+        if(!params.errorType) {
+            params.errorType = 'React Native Exception';
         }
+        if(!params.category) {
+            if(Platform.OS === 'android') {
+                params.category = 8;
+            } else {
+                params.category = 5;
+            }
+        }
+        RNBugly.postException&&RNBugly.postException(params);
     }
 };

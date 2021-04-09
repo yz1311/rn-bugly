@@ -1,3 +1,8 @@
+# 0.3.2 (2021-04-09)
+* 实现ios端的`postException`，修复[#16](https://github.com/yz1311/rn-bugly/issues/16)
+* 添加`startCrashReport`、`closeCrashReport`、
+  `getCurrentTag`、`getUserData`、`getBuglyVersion`等接口
+
 # 0.3.1 (2021-03-17)
 * 由于jcenter仓库的问题，暂时固定`com.tencent.bugly:nativecrashreport`版本为`3.8.0`
 

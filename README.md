@@ -36,7 +36,7 @@ $ pod install
   ...
   //初始化bugly，会自动读取info.plist中的参数
   [RNBugly startWithAppId];
-	return YES;
+  return YES;
 }
 ```
 `info.plist`文件读取SDK初始化参数，可配置的参数如下(`除Appid为必填外，其它可选`)：
@@ -76,7 +76,7 @@ public void onCreate() {
   //初始化并且自动检查更新
   RNBuglyModule.init(getApplicationContext(),"注册时申请的APPID",false);
 
-  //仅仅初始化(推荐使用该方法，所有的检查更新触发都都js端，更加灵活)
+  //仅仅初始化(推荐使用该方法，所有的检查更新触发都在js端，更加灵活)
   RNBuglyModule.initWithoutAutoCheckUpgrade(getApplicationContext(),"注册时申请的APPID",false);
 }
 ```
@@ -109,9 +109,27 @@ RNBugly.checkUpgrade({
 //获取更新信息
 //注意:更新信息获取一次后会储存在本地，即使后台控制停止该版本更新，该方法依旧可以获取到数据
 let updateInfo = await RNBugly.getUpgradeInfo();
+
+
+//上报自定义异常信息
+RNBugly.postException({
+    errorMsg: 'login error',
+    stack: 'sadasdasd\nzxzxsds',
+    extraInfo: {
+        userInfo: 'test',
+        password: '12345'
+    }
+})
 ```
 
-具体方法请查看: [index.d.ts](./index.d.ts)
+bugly后端异常信息如下：
+
+![](https://tva1.sinaimg.cn/large/008eGmZEgy1gpdin9v721j30ww04imxk.jpg)
+<br/>
+<br/>
+![](https://tva1.sinaimg.cn/large/008eGmZEgy1gpdiomwgs7j30w6068aal.jpg)
+
+其他方法及注释请查看: [index.d.ts](types/index.d.ts)
 
 参考[demo](./example),或者下载[example.apk](https://zhaoyang.lanzous.com/ib832sh)体验
 

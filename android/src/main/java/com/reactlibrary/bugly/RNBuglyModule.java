@@ -14,6 +14,7 @@ import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.ReadableMapKeySetIterator;
 import com.facebook.react.bridge.ReadableType;
+import com.facebook.react.bridge.WritableArray;
 import com.facebook.react.bridge.WritableMap;
 import com.tencent.bugly.Bugly;
 import com.tencent.bugly.beta.Beta;
@@ -22,7 +23,10 @@ import com.tencent.bugly.crashreport.BuglyLog;
 import com.tencent.bugly.crashreport.CrashReport;
 
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class RNBuglyModule extends ReactContextBaseJavaModule {
 
@@ -170,6 +174,38 @@ public class RNBuglyModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void setUserSceneTag(int tagId) {
     CrashReport.setUserSceneTag(getReactApplicationContext(), tagId);
+  }
+
+  @ReactMethod
+  public void startCrashReport() {
+    CrashReport.startCrashReport();
+  }
+
+  @ReactMethod
+  public void closeCrashReport() {
+    CrashReport.closeCrashReport();
+  }
+
+  @ReactMethod
+  public void getCurrentTag(final Promise promise) {
+    promise.resolve(CrashReport.getUserSceneTagId(getReactApplicationContext()));
+  }
+
+  @ReactMethod
+  public void getUserData(final Promise promise) {
+    Set<String> keys = CrashReport.getAllUserDataKeys(getReactApplicationContext());
+    Iterator iterator =  keys.iterator();
+    WritableMap map = Arguments.createMap();
+    while (iterator.hasNext()) {
+      String key = (String)iterator.next();
+      map.putString(key, CrashReport.getUserData(getReactApplicationContext(), key));
+    }
+    promise.resolve(map);
+  }
+
+  @ReactMethod
+  public void getBuglyVersion(final Promise promise) {
+    promise.resolve(CrashReport.getBuglyVersion(getReactApplicationContext()));
   }
 
   @ReactMethod
