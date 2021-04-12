@@ -1,3 +1,9 @@
+# 1.1.0 (2021-04-12)
+跟0.3.3完全一致，后面在v1进行更新
+
+# 0.3.3 (2021-04-12)
+* 固定两端的bugly sdk版本，防止出现版本号不一致导致编译失败问题
+
 # 0.3.2 (2021-04-09)
 * 实现ios端的`postException`，修复[#16](https://github.com/yz1311/rn-bugly/issues/16)
 * 添加`startCrashReport`、`closeCrashReport`、

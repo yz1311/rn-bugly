@@ -151,6 +151,10 @@ bugly后端异常信息如下：
 
 https://blog.csdn.net/weixin_34114823/article/details/88037177
 
+在最新的1.1.0的版本中，依赖的官方sdk，已经支持https了，具体查看[官方日志](https://bugly.qq.com/docs/release-notes/release-android-beta/?v=20200622202242)
+
+
+
 #### 3.为什么我点击更新按钮后，对话框关闭，啥反应都没有?
 
 等一会会出现安装提示,bugly对的更新方式是直接在通知栏显示下载进度，下载完成覆盖安装，如果状态栏没有提示，那就是没有通知权限(oppo/vivo系统是默认不开启该权限的)
