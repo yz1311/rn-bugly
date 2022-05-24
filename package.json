@@ -1,7 +1,7 @@
 
 {
   "name": "rn-bugly",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "bugly for react-native,支持统计，android支持全量升级",
   "main": "index.js",
   "types": "./types/index.d.ts",
