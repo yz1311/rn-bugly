@@ -4,3 +4,7 @@ android/.settings
 android/.project
 android/android.iml
 android/local.properties
+.idea
+node_modules
+yarn.lock
+package-lock.json
