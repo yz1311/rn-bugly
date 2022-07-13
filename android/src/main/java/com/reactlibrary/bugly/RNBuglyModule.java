@@ -152,6 +152,16 @@ public class RNBuglyModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
+  public void setDeviceID(String deviceID) {
+    CrashReport.setDeviceId(getReactApplicationContext(), deviceID);
+  }
+
+  @ReactMethod
+  public void setDeviceModel(String deviceModel) {
+    CrashReport.setDeviceModel(getReactApplicationContext(), deviceModel);
+  }
+
+  @ReactMethod
   public void setUserId(String userID) {
     CrashReport.setUserId(userID);
   }

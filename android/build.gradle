@@ -41,6 +41,6 @@ repositories {
 dependencies {
     implementation 'com.facebook.react:react-native:+'
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation 'com.tencent.bugly:crashreport_upgrade:1.5.23'
+    implementation 'com.tencent.bugly:crashreport_upgrade:1.6.1'
     implementation 'com.tencent.bugly:nativecrashreport:3.9.2'
 }

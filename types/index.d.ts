@@ -13,6 +13,18 @@ declare module 'rn-bugly' {
     export function setAppVersion (version: string): void;
 
     /**
+     * Android Only,设置设备id
+     * @param deviceID
+     */
+    export function setDeviceID (deviceID: string): void;
+
+    /**
+     * Android Only,设置设备型号
+     * @param deviceModel
+     */
+    export function setDeviceModel (deviceModel: string): void;
+
+    /**
      * Android Only,设置渠道名称
      * @param appChannel
      */

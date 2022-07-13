@@ -23,6 +23,20 @@ export default {
             RNBugly.updateAppVersion(version);
         }
     },
+    setDeviceID: function (deviceID) {
+        if(Platform.OS === 'android') {
+            RNBugly.setDeviceID(deviceID);
+        } else {
+
+        }
+    },
+    setDeviceModel: function (deviceModel) {
+        if(Platform.OS === 'android') {
+            RNBugly.setDeviceModel(deviceModel);
+        } else {
+
+        }
+    },
     setAppChannel: function (appChannel) {
         if(Platform.OS === 'android') {
             RNBugly.setAppChannel(appChannel);
