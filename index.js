@@ -93,11 +93,11 @@ export default {
      * 但是autoCheckAppUpgrade无效
      * 该方法有问题，屏蔽掉
      */
-    // init: function (appId) {
-    //     if(Platform.OS === 'android') {
-    //         return RNBugly.init(appId);
-    //     }
-    // },
+    init: function (appId) {
+        if(Platform.OS === 'android') {
+            return RNBugly.init(appId);
+        }
+    },
     /**
      * Android Only,获取本地已有升级策略（非实时，可用于界面红点展示）
      */

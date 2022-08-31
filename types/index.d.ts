@@ -115,33 +115,33 @@ declare module 'rn-bugly' {
         publishTime: number,
     }>;
 
-    // export function init({
-    //     appId,
-    //     autoCheckAppUpgrade,
-    //     largeIconName,
-    //     smallIconName,
-    //     defaultBannerName,
-    //     upgradeDialogLayoutName,
-    //     tipsDialogLayoutName,
-    //     upgradeCheckPeriod,
-    //     showInterruptedStrategy,
-    //     enableNotification,
-    //     autoDownloadOnWifi,
-    //     canShowApkInfo,
-    // }: {
-    //     appId: string,
-    //     autoCheckAppUpgrade?: boolean,
-    //     largeIconName?: string,
-    //     smallIconName?: string,
-    //     defaultBannerName?: string,
-    //     upgradeDialogLayoutName?: string,
-    //     tipsDialogLayoutName?: string,
-    //     upgradeCheckPeriod?: number,
-    //     showInterruptedStrategy?: boolean,
-    //     enableNotification?: boolean,
-    //     autoDownloadOnWifi?: boolean,
-    //     canShowApkInfo?: boolean,
-    // }): void;
+    export function init({
+        appId,
+        autoCheckAppUpgrade,
+        largeIconName,
+        smallIconName,
+        defaultBannerName,
+        upgradeDialogLayoutName,
+        tipsDialogLayoutName,
+        upgradeCheckPeriod,
+        showInterruptedStrategy,
+        enableNotification,
+        autoDownloadOnWifi,
+        canShowApkInfo,
+    }: {
+        appId: string,
+        autoCheckAppUpgrade?: boolean,
+        largeIconName?: string,
+        smallIconName?: string,
+        defaultBannerName?: string,
+        upgradeDialogLayoutName?: string,
+        tipsDialogLayoutName?: string,
+        upgradeCheckPeriod?: number,
+        showInterruptedStrategy?: boolean,
+        enableNotification?: boolean,
+        autoDownloadOnWifi?: boolean,
+        canShowApkInfo?: boolean,
+    }): Promise<boolean>;
 
     /**
     * @param isManual  用户手动点击检查，非用户点击操作请传false
