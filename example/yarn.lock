@@ -4932,9 +4932,9 @@ punycode@^2.1.0, punycode@^2.1.1:
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
 qs@~6.5.2:
-  version "6.5.2"
-  resolved "https://registry.npmjs.org/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
-  integrity sha512-N5ZAX4/LxJmF+7wN74pUD6qAh9/wnvdQcjq9TZjevvXzSUo7bfmw91saqMjzGS2xq91/odN2dW/WOl7qQHNDGA==
+  version "6.5.3"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.3.tgz#3aeeffc91967ef6e35c0e488ef46fb296ab76aad"
+  integrity sha512-qxXIEh4pCGfHICj1mAJQ2/2XVZkjCDTcEgfoSQxc/fYivUZxTkk7L3bDBJSoNrEzXI17oUO5Dp07ktqE5KzczA==
 
 range-parser@~1.2.1:
   version "1.2.1"
@@ -5260,10 +5260,10 @@ rimraf@~2.2.6:
   resolved "https://registry.npmjs.org/rimraf/-/rimraf-2.2.8.tgz#e439be2aaee327321952730f99a8929e4fc50582"
   integrity sha1-5Dm+Kq7jJzIZUnMPmaiSnk/FBYI=
 
-rn-bugly@0.3.0-beta3:
-  version "0.3.0-beta3"
-  resolved "https://registry.npmjs.org/rn-bugly/-/rn-bugly-0.3.0-beta3.tgz#780934ed2d52d5344f789bf0a65d2c7ba7f0a963"
-  integrity sha512-zD/o7e5Izx0XrOw5HwQ+UN0peG9TdZyB/tmxr1DKP6m/A2AKgtS+EkYS5pSooh5/rYP1g/Ox0EOsZZyuczoF0A==
+rn-bugly@0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/rn-bugly/-/rn-bugly-0.3.0.tgz#d299beb28a235f62dd71236d727804fa39596ff2"
+  integrity sha512-Mjuri0tT4a2LdWewK28tWbrTz1NtwckV04FNCjHtqBSpZ6zDMlchEGmWTGO9XWBs9z6YfIjRvQAVQfeaCV37XQ==
 
 rsvp@^4.8.4:
   version "4.8.5"
