@@ -3810,11 +3810,9 @@ json-stringify-safe@~5.0.1:
   integrity sha1-Epai1Y/UXxmg9s4B1lcB4sc1tus=
 
 json5@^2.1.2:
-  version "2.1.3"
-  resolved "https://registry.npmjs.org/json5/-/json5-2.1.3.tgz#c9b0f7fa9233bfe5807fe66fcf3a5617ed597d43"
-  integrity sha512-KXPvOm8K9IJKFM0bmdn8QXh7udDh1g/giieX0NLCaMnb4hEiVFqnop2ImTXCc5e0/oHz3LTqmHGtExn5hfMkOA==
-  dependencies:
-    minimist "^1.2.5"
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.3.tgz#78cd6f1a19bdc12b73db5ad0c61efd66c1e29283"
+  integrity sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==
 
 jsonfile@^2.1.0:
   version "2.4.0"
@@ -5260,10 +5258,10 @@ rimraf@~2.2.6:
   resolved "https://registry.npmjs.org/rimraf/-/rimraf-2.2.8.tgz#e439be2aaee327321952730f99a8929e4fc50582"
   integrity sha1-5Dm+Kq7jJzIZUnMPmaiSnk/FBYI=
 
-rn-bugly@0.3.0-beta3:
-  version "0.3.0-beta3"
-  resolved "https://registry.npmjs.org/rn-bugly/-/rn-bugly-0.3.0-beta3.tgz#780934ed2d52d5344f789bf0a65d2c7ba7f0a963"
-  integrity sha512-zD/o7e5Izx0XrOw5HwQ+UN0peG9TdZyB/tmxr1DKP6m/A2AKgtS+EkYS5pSooh5/rYP1g/Ox0EOsZZyuczoF0A==
+rn-bugly@0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/rn-bugly/-/rn-bugly-0.3.0.tgz#d299beb28a235f62dd71236d727804fa39596ff2"
+  integrity sha512-Mjuri0tT4a2LdWewK28tWbrTz1NtwckV04FNCjHtqBSpZ6zDMlchEGmWTGO9XWBs9z6YfIjRvQAVQfeaCV37XQ==
 
 rsvp@^4.8.4:
   version "4.8.5"
