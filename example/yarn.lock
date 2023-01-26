@@ -5260,10 +5260,10 @@ rimraf@~2.2.6:
   resolved "https://registry.npmjs.org/rimraf/-/rimraf-2.2.8.tgz#e439be2aaee327321952730f99a8929e4fc50582"
   integrity sha1-5Dm+Kq7jJzIZUnMPmaiSnk/FBYI=
 
-rn-bugly@0.3.0-beta3:
-  version "0.3.0-beta3"
-  resolved "https://registry.npmjs.org/rn-bugly/-/rn-bugly-0.3.0-beta3.tgz#780934ed2d52d5344f789bf0a65d2c7ba7f0a963"
-  integrity sha512-zD/o7e5Izx0XrOw5HwQ+UN0peG9TdZyB/tmxr1DKP6m/A2AKgtS+EkYS5pSooh5/rYP1g/Ox0EOsZZyuczoF0A==
+rn-bugly@0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/rn-bugly/-/rn-bugly-0.3.0.tgz#d299beb28a235f62dd71236d727804fa39596ff2"
+  integrity sha512-Mjuri0tT4a2LdWewK28tWbrTz1NtwckV04FNCjHtqBSpZ6zDMlchEGmWTGO9XWBs9z6YfIjRvQAVQfeaCV37XQ==
 
 rsvp@^4.8.4:
   version "4.8.5"
@@ -5987,9 +5987,9 @@ typedarray@^0.0.6:
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
 ua-parser-js@^0.7.18:
-  version "0.7.21"
-  resolved "https://registry.npmjs.org/ua-parser-js/-/ua-parser-js-0.7.21.tgz#853cf9ce93f642f67174273cc34565ae6f308777"
-  integrity sha512-+O8/qh/Qj8CgC6eYBVBykMrNtp5Gebn4dlGD/kKXVkJNDwyrAwSIqwz8CDf+tsAIWVycKcku6gIXJ0qwx/ZXaQ==
+  version "0.7.33"
+  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.33.tgz#1d04acb4ccef9293df6f70f2c3d22f3030d8b532"
+  integrity sha512-s8ax/CeZdK9R/56Sui0WM6y9OFREJarMRHqLB2EwkovemBxNQ+Bqu8GAsUnVcXKgphb++ghr/B2BZx4mahujPw==
 
 uglify-es@^3.1.9:
   version "3.3.9"
